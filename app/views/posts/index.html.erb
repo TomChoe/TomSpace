@@ -1,0 +1,5 @@
+<h1> This is the main post index </h1>
+
+<% @posts.each do |post| %>
+  <a href="/posts/<%=post[:id]%>"><strong><%= post[:body] %></strong></a><br><br>
+<% end %>

@@ -1,0 +1,11 @@
+<h1> Post by : <%= @postUser[:email] %> </h1>
+
+<h2><strong>Title: <%= @post[:title] %></strong></h2>
+<%= @post[:body] %>
+<br>
+<h2>Comments :</h2>
+
+<% @comments.each do |comment| %>
+	<p><%= comment[:body] %></p>
+	<p><%=  comment.user[:email] %></p>
+<% end %>
