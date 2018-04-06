@@ -3,9 +3,18 @@
 <h2><strong>Title: <%= @post[:title] %></strong></h2>
 <%= @post[:body] %>
 <br>
+	<% if current_user.id == @post.user.id %>
+		<%= link_to 'Delete Post', @post, method: :delete %>
+	<% end %>
+<br>
 <h2>Comments :</h2>
 
 <% @comments.each do |comment| %>
 	<p><%= comment[:body] %></p>
 	<p><%=  comment.user[:email] %></p>
+	<% if current_user.id == comment.user_id %>
+		<%= link_to 'Delete comment', @comment, method: :delete %>
+	<% end %>
 <% end %>
+
+<%= render 'createcomment' %>

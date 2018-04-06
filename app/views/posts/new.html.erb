@@ -1,2 +1,9 @@
-<h1>Post#create</h1>
-<p>Find me in app/views/post/create.html.erb</p>
+<div class="form">
+  <form method="POST" action="/posts">
+  	<input type="hidden" name="post[user_id]" value=<%= current_user.id %> />
+    <input type="text" name="post[title]" placeholder="Title of post" />
+    <input type="text" name="post[body]" placeholder="Write about anything" />
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="submit" value="submit" />
+  </form>
+</div>
