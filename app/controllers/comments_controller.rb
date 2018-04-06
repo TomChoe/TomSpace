@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
 			redirect_to ('/posts')
 			render json: {message:'ok'}
 		end
-		
 	end
 
 	private

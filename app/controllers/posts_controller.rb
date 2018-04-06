@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   def show
     @comments = @post.comments
     @postUser = @post.user
-    Comment.destroy(@comment)
   end
 
   def create
@@ -40,6 +39,15 @@ class PostsController < ApplicationController
   def createComment
     @comment = Comment.create(comment_params)
       redirect_to ("/posts/#{@post.id}")
+  end
+
+  def deleteComment
+    
+  end
+
+  def fOff
+    data = HTTParty.get "http://foaas.com/operations"
+    binding.pry
   end
   
   private

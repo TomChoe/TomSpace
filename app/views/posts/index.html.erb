@@ -1,7 +1,10 @@
-<h1> This is the main post index </h1>
-
-<% @posts.each do |post| %>
-  <a href="/posts/<%=post[:id]%>"><strong><%= post[:body] %></strong></a><br><br>
-<% end %>
-
-<a href="/posts/new"><button>Create Post</button></a>
+<div class="jumbotron">
+	<h1> Posts </h1>
+		<hr>
+	<ul class="list-group">
+		<% @posts.each do |post| %>
+		  <li class="list-group-item"><a href="/posts/<%=post[:id]%>"><strong><%= post[:body] %></strong></a></li><br><br>
+		<% end %>
+	</ul>
+	<a href="/posts/new"><button>Create Post</button></a>
+</div>
